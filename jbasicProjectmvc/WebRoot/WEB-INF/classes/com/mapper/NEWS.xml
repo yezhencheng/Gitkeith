@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper  
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+	<!-- 务必配置正确namespace 就是所映射的接口类-->
+	
+<mapper namespace="com.dao.INewsDao">
+
+
+<select id="querymap" resultType="com.entity.BigInfo"
+		parameterType="java.util.Map">
+	select * from t0301_type where bigname is not null and used ='0' 
+</select>
+
+
+
+
+<select id="querysmalllist" resultType="com.entity.BigInfo"
+		parameterType="java.util.Map">
+select A.bigid,A.smallid,A.smallname,A.used,B.bigname,A.typecontent from 
+(select * from t0301_type where bigid=#{bigid} and bigname is null and used ='0' ) A
+left join 
+(select * from t0301_type where bigid=#{bigid} and bigname is not null and used ='0' ) B
+on A.bigid=B.bigid 
+</select>
+
+<update id="addpoint" parameterType="java.util.Map">
+update t0300_newsinfo set point=point+1 where newsid=#{newsid}
+
+
+</update>
+
+
+<select id="queryitembysmall" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+select * from t0300_newsinfo where typeid=#{smallid} and used='0'
+</select>
+		
+		
+
+
+<select id="queryNewsDetail" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+select A.*,DATE_FORMAT(datetime,'%c-%d') as datetimef,B.smallname,c.bigname,c.bigid  from t0300_newsinfo A inner join 
+t0301_type B on A.typeid=B.smallid 
+LEFT  JOIN t0301_type C on B.bigid=C.bigid
+	where A.used='0' and A.newsid=#{newsid} and C.bigname is not null order by A.datetime desc
+</select>
+
+
+<select id="queryupdown" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+		<![CDATA[ 
+select newsid,updown from 
+(
+(select newsid,'down' as updown from t0300_newsinfo where typeid=#{typeid} and newsid>#{newsid} order by id asc LIMIT 1) 
+union all
+(select newsid,'up' as z  from t0300_newsinfo where typeid=#{typeid} and newsid<#{newsid}  order by id desc LIMIT 1 )
+) as   C
+]]>
+</select>
+
+		
+		
+
+
+<select id="queryByBig" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+select A.*,DATE_FORMAT(datetime,'%c-%d') as datetimef  from t0300_newsinfo A inner join 
+t0301_type B on A.typeid=B.smallid
+	where A.used='0' and B.bigid=#{bigid} order by A.datetime desc
+</select>
+		
+		
+
+
+
+<select id="queryPaiHang" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+	select A.*,DATE_FORMAT(datetime,'%c-%d') as datetimef  from t0300_newsinfo A 
+	where used='0' 
+	order by point desc
+</select>
+
+<select id="queryLeiBie" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+	select A.*,DATE_FORMAT(datetime,'%c-%d') as datetimef  from t0300_newsinfo A 
+	where used='0' and typeid=#{typeid}
+	
+	order by datetime desc
+	
+</select>
+
+<delete id="deleteleibie" parameterType="java.util.Map">
+delete from t0301_type where id=#{id}
+</delete>
+
+
+
+<update id="editsmalltype"  parameterType="java.util.Map"  >
+update  t0301_type set smallname=#{smallname} where  id=#{id}
+</update>
+
+<select id="querleibieitem" parameterType="java.util.Map"  resultType="com.entity.T0301NEWSTYPE">
+select * from t0301_type where id=#{id}
+</select>
+
+
+<insert id="doaddsmalltype" parameterType="java.util.Map">
+insert into t0301_type (bigid,smallid,smallname) values (#{bigid},#{smallid},#{smallname}) 
+</insert>
+
+<insert id="doaddbigtype" 	parameterType="java.util.Map">
+insert into t0301_type (bigid,bigname,typecontent) values (#{bigid},#{bigname},#{typecontent}) 
+</insert>
+
+<select id="findtypelist" resultType="com.entity.T0301NEWSTYPE"
+		parameterType="java.util.Map">
+select A.id,  A.smallid,A.smallname,A.used, b.bigid,b.bigname from t0301_type A left join 
+(select * from t0301_type where smallid is null)  B
+on A.bigid=B.bigid 
+ where  A.bigname is null  
+	<if test="smallname!=null and smallname!=''">
+			 and A.smallname=#{smallname}
+		 </if>		 
+		  order by bigid desc 
+</select>
+
+
+<select id="queryNew" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+	select A.*,DATE_FORMAT(datetime,'%c-%d') as datetimef  from t0300_newsinfo A 
+	where used='0' 
+	order by datetime desc
+	
+</select>
+
+
+
+<select id="querynewsitem" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+	select A.*,B.bigid from 	t0300_newsinfo A
+	left join t0301_type B on A.typeid=B.smallid
+	 where A.id=#{id}
+</select>
+
+
+<update id="doupdatenews" parameterType="java.util.Map">
+update  t0300_newsinfo set typeid=#{typeid},title=#{title},keywords=#{keywords},description=#{description}
+,content=#{content},power=#{power},datetime=#{datetime} where id=#{newsid}
+</update>
+
+
+
+
+
+<delete id="deletenewsitem" parameterType="java.util.Map">
+delete from t0300_newsinfo where id=#{id}
+</delete>
+
+<select id="findlist" resultType="com.entity.T0300NEWS"
+		parameterType="java.util.Map">
+	select A.*,B.smallname as typename  from t0300_newsinfo A left join t0301_type B on A.typeid=B.smallid 
+	where 1=1
+	<if test="title!=null and title!=''">
+			and A.title=#{title}
+		 </if>
+		 order by A.datetime desc
+</select>
+
+
+
+<select id="querybigtype" resultType="com.entity.T0301NEWSTYPE"
+		parameterType="java.util.Map">
+	select * from t0301_type where used='0' and 
+	smallid is null and smallname is null
+</select>
+
+<select id="querysmalltype" resultType="com.entity.T0301NEWSTYPE"
+		parameterType="java.util.Map">
+	select * from t0301_type where used='0' and 
+	bigid=#{bigid} and bigname is null
+</select>
+
+<select id="querysmalltypebyid" resultType="com.entity.T0301NEWSTYPE"
+		parameterType="java.util.Map">
+select * from t0301_type where bigid=(select bigid from t0301_type where smallid=#{smallid}) 
+and bigname is null
+</select>
+
+
+
+
+<insert id="dosavenews" parameterType="java.util.Map">
+insert into t0300_newsinfo (newsid,typeid,title,keywords,description,content,power,datetime) values
+(#{newsid},#{typeid},#{title},#{keywords},#{description},#{content},#{power},#{datetime})
+</insert>
+
+
+</mapper>

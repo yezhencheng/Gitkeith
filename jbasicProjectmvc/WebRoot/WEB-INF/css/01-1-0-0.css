@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/*用户管理*/
+.wenben { height:27px;width:95%; margin-top:0px !important} 
+.wenben li {float: left;margin-bottom: 15px;width: 20%; margin-right:3%}
+.wenben li input {width: 50%;text-align: center}
+.B {width:8% !important; float:left;margin-right: 0% !important;}
+.new {width:20% !important; float:left;margin-right: 0% !important;}
+.yhgl tr:nth-child(odd){background:#F2F2F2;} 
+
+/*影院添加*/
+.news3 { width:30%}
+.news3 input { width:50%}
+.news3 select { width:50%}
+.news3-1 { text-align:right}
+.news3 td { border:0px}
+.news3-2{width: 30%;text-align: center;margin-top: 30px;}
+
+/*影片管理*/
+.wenben03-1-0-0 { width:80%; margin-bottom:20px; margin-top:23px; height:30px}
+.wenben03-1-0-0 li { float:left;width:20%}
+.wenben03-1-0-0 input {width:50% }
+.wenben03-1-0-0 select { width:50% !important}
+
+/*模块管理*/
+.mukuaiGL tr:nth-child(odd){background:#F2F2F2;}
+/*权限添加*/
+.quanxianTJ tr:nth-child(odd){background:#F2F2F2;}
+/*影片管理*/
+.ingpianGL tr:nth-child(odd){background:#F2F2F2;}
+/*会员卡活动管理*/
+.Hykhdgl tr:nth-child(odd){background:#F2F2F2;}
+
+/*用户添加*/
+.news4 { width:95%; margin-left:5%}
+.news4 td { text-align:left; border:0px !important}
+.01-1-1 input { margin-right:3em }
+.news3-6 { margin-left:10em !important; margin-top:30px; display:block}
+.fuXuan input {height:14px;vertical-align: text-top; margin-left:2% }
+.news4 tr td {height:30px}
+.new3-2 input {display: block;float: left;margin-left: 27px;}
+.new3-2 span {margin-top: 7px;display: block;float: left}
+
+/*角色管理*/
+.jiaoseGL tr:nth-child(odd){background:#F2F2F2;}
+
+/*角色添加*/
+.C{ padding: 6px 15px;color: #295f8d;padding-bottom: 20px;border: 1px solid #5c87a7;  background: none;border-radius: 5px; width: 118px !important;height: 30px; margin-top:10px}
+.C:hover { background-color:#465580; color:#FFF; border:none; border:1px solid #465580;}
+.jSTJ { width:50%}
+.jSTJ tr td { text-align:left; border:0px; height:40px}
+.jSTJ tr td input { width:25%}
+.jSTJ tr td select { width:25.5%;}
+.jSTJ tr td textarea { width:25%; height:100px}
+
+/*编辑影片信息*/
+.news3-04 { width:30%; margin-left:10%; margin-top:45px}
+.wenben03-1-1-0 { width:40% !important; margin-left:10%}
+.wenben03-1-1-0 td { border:0px; text-align:left}
+.kuang {width: 153px !important;height: 197px;border: 1px solid #A0A0A0 !important;display: block;margin-left: 135px;}
+
+/*活动管理*/
+#wenbenHD {height:27px;width:95%; margin-top:0px !important} 
+#wenbenHD li {float: left;margin-bottom: 15px;width: 16%; margin-right:3%}
+#wenbenHD li input {width: 47%;text-align: center}
+
+/*影片活动1*/
+p { margin-bottom:5px}
+.pqgl tr td { height:45px}
+.pqgl  tr:nth-child(odd){background:#F2F2F2;}
+.pqgl { clear:both}
+
+#yPHD {height:27px;width:90%; margin-top:0px !important} 
+#yPHD li {margin-bottom: 15px;width: 20%; margin-right:1%}
+#yPHD li input {width: 50%;text-align: center}
+#yPHD tr td { text-align:left; border:0}
+#yPHD tr td input { width:11%; height:20px !important;    margin-right: 5px;}
+#yPHD tr td select {width:8.5%;margin-right: 7px;height: 24px !important;    margin-top: 15px;}
+.pqsj { text-align:left; margin-left:10px}
+.pqsj input { display:block; float:left; width:8.1% !important;height:20px !important; margin-top:15px}
+.pqsj span { display:block; float:left; margin-top:19px;margin-left: 5px;width: 115px;}
+.pqsj { width:20%}
+.dao {width: 16px;padding: 0 3px;margin-top: 5px}
+.tupian { width:60% !important; margin-top:33px}
+.tupian tr td { border:0px; text-align:left}
+/*影片活动2*/
+.huodong2BG { width:35%; margin-bottom:20px; margin-top:20px; height:20px !important}
+#huodong2 { margin-bottom:20px}
+#huodong2  tr:nth-child(odd){background:#F2F2F2;}
+.P { padding:2px}
+.P p input { }
+.P p span {margin-top: -25px;display: block;margin-left: 40px}
+.P p{margin-left: -21px;    margin-bottom: 20px;}
+
+/*选择影院*/
+#yuanZe { margin-bottom:20px; width:60%; margin-left:20% }
+#yuanZe li span { display:block; width:20%; height:30px;    margin-left: 100px }
+#yuanZe li span input { display:block; float:left; margin-top:-6px; margin-right:5PX}
+#yuanZe h1 { font-size:14px; font-weight:600; margin-bottom:20px}
+#yuanZe h2 {font-size:12px;  font-weight:600; margin-bottom:20px; margin-left:45px}
+
+/*影院查看活动*/
+#huodong3 tr:nth-child(odd){background:#F2F2F2;} 
+/*礼券活动*/
+#wenben4 li {float: left;margin-bottom: 15px;width: 20%; margin-right:-0.5%}
+#wenben4 li input {width: 50%;text-align: center}
+.F .H {width: 55PX !important; float:left;margin-right:3% !important;}
+.ljhd tr td a { margin-left:10px }
+.ljhd tr:nth-child(odd){background:#F2F2F2;}  
+/*卷新建活动*/
+.wenben03-1-1-0 { width:60% !important; margin-left:10%}
+.wenben03-1-1-0 td { border:1px; text-align:left}
+.haibao { width: 153px !important; height: 145px;border: 1px solid #A0A0A0 !important;display:block;    margin-bottom: 10px}
+.news3-03 { width:30%; margin-left:26%; margin-top:20px}
+.wenben04-1-1-0-1 {text-align: right !important; padding-right:15px
+}
+.haibao1 {display: block; margin-top: -39px;margin-left: 193px;}
+.T {width:37%}
+.G input {width: 23.5%;}
+#di {margin-left: 19%; margin-top: 20px}
+/*添加卷*/
+.tianjiajuan{width:40%;margin-left:200px;}
+.tianjiajuan tr td { border:0px;text-align:left !important;}
+.danxuan {height: 15px !important;}
+.tianjia { text-align:right !important; margin-right:5px; padding-bottom:5px}
+.tianjia2 { text-align:left !important}
+.tianjia2 span { margin-left:5px; margin-right:5px}
+.tianjia2 select {width: 15.5%;}
+#wudi { display:block}
+
+/*活动规则*/
+.guize2 { width:50% !important}
+.guize2 tr td { border:0px}
+.guize3 { width:50% !important}
+.guize1 tr td { border:0px}
+.guize1 { width:50% !important}
+.guize1 tr td input { width:68%; padding:0px !important}
+.guize4 { width:50% !important}
+.guize4 tr td select { width:50%}
+.guize4 tr td { border:0px}
+.hdgz li { margin-bottom:20px}
+.hdgz li .hdgz-1 { height:10px !important}
+.hdgz li span { margin:5px}
+#hdgzdi { margin-left:12.5%; margin-top:20px}
+#hdgzdiQ { margin-left:0%; margin-top:40px}

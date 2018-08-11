@@ -1,0 +1,160 @@
+@charset "UTF-8";
+*{ margin:0; padding:0; font-size:12px; color:#333333;}
+body{margin:0;font-family:'宋体',sans-serif;font-size:12px;}
+h1,h2,h3,h4,p,dl,dt,dd,form,input,select {margin:0;padding:0;}
+h1,h2,h3,h4{font-weight:normal;font-size:12px;}
+th,td{padding:0;}
+ul,ol{margin:0;padding:0;list-style-type:none;}
+a img {border:none;}
+table {table-layout:fixed;word-wrap:break-word;} 
+var,em {font-style:normal;}
+table{border-collapse:collapse;text-align:center; margin-top:20px}
+input{cursor:pointer; outline:none; color:#898989;}
+select{ outline:none; color:#ACACAC; width:55%; text-align:center}
+.news-biaoti{ line-height:34px; border-bottom:1px solid #e0e4ef; border-top:1px solid #e0e4ef;}
+.news2{width:88%; overflow:hidden; border-bottom:1px solid #e0e4ef; margin-top:4px;}
+.bold{ font-weight:bold; margin-right:13px; font-size:14px;}
+.news2 li{ float:left; line-height:40px;}
+#news-container{ min-width:900px; max-width:1440px; width:98%; margin-left:2%; color:#535353;}
+/*用户管理*/
+.wenben { height:40px; line-height:40px; width:95%; margin-top:20px}
+.wenben li {float: left;margin-bottom: 15px;width: 16%;margin-left: 1em}
+.wenben li input {width: 50%;text-align: center}
+.B {width: 10% !important;text-align: center}
+.A {width: 5em !important;height: 4% !important;padding: 5px 10px;background: #018BF9;border-radius: 13px;border: 1px solid #D8D8D8;color: #FFFFFF;}
+.A:hover {background: #00BBFF;color: #FFFFFF;}
+table{ width:80%; text-align:center; margin-top:20px}
+th,td{ border:1px solid #c9c9c9;}
+th{ height:50px; line-height:24px; font-size:1.2em; background:#f2f6ff}
+td { color:#848484; height:40px}
+a{ color: #F77004;outline:none;text-decoration:none;border-bottom:1px solid #F77004;padding:0px 1px 2px 2px ;}
+a:hover {color:#FF0004;border-bottom:1px solid #FF0004;padding:0px 1px 2px 2px ;}
+
+/*组织卡级别管理*/
+.wenben05-01-0-0 { width:80%; text-align:right; margin-top:20px;}
+.wenben05-01-0-0 li { width:100% ; text-align:left}
+.wenben05-01-0-0 .A { width:71px !important }
+
+/*组织新增卡级别*/
+.news05-1-01 td { border:0px}
+.news05-1-01 { width:70%; border:0px !important}
+.news05-1-01 input { width:50%}
+.news05-1-01 select { width:51%}
+.zuo { text-align:right; padding-right:1em}
+.you { text-align:left; padding-left:1em}
+.fen-1 { width:28%; text-align:right; padding-right:1em}
+.fen-2 { width:25%; text-align:left; padding-left:1em}
+.fen-3 { width: 139%;text-align: left; padding-left: -2em !important;display: block;margin-left: -25%;padding-top: 1.6em;}
+.fen-4 { width:32%; text-align:left !important;}
+.news3-06 {width: 63%;text-align: center;margin-left: -15px;}
+
+/*组织卡政策管理*/
+#shang {width: 66%;background:#F7F7F7;text-align: center;padding-top: 2%;padding-bottom: 3%;padding-left: 14%; border-radius:40px; margin-top:30px}
+#shang table{ width:80%}
+#zzkzc {width: 66%;background:#F7F7F7;height: 560px;padding-left: 7%;padding-right: 7%;padding-top: 59px; margin-top:30px;border-radius: 40px;}
+.zzkzc-1 { width:30%; float:left;}
+.zzkzc-1 span { width:100%; display:block; text-align:center}
+.zzkzc-1 span input { width:4em !important; margin-right:4% }
+.zzkzc-2 { width:100%;}
+.zzkzc-2 tr td{ border:0px; text-align:left; height:54px} 
+.zzkzc-2 tr td input { width:80% ; height:2em }
+.zzkzc-2 tr td textarea { width:81%; height:174px; margin-top:1em }
+.zzkzc-2 tr td select { width:82% ; height:2.3em}
+.zzkzc-2-1 { width:40% !important}
+.zzkzc-2-2 { width:60% !important}
+.zzkzc-3 { width:67%; float:left; margin-left:3%}
+.zzkzc-3-2 { width:100% !important}
+.right-title { text-align:center; width:100%}
+.right-title input { width:4em !important;margin-left:1%}
+.zzkzc-3-3 { width:100% !important;}
+.zzkzc-3-3 tr td { text-align:right; border:0px}
+.zzkzc-3-4 { width:100% !important}
+.zzkzc-3-4 tr td { border:0px}
+.food-title input { margin-left:3em}
+.zzkzc-3-3 input { width:80%}
+
+
+.H {width: 5em !important;padding: 5px 10px;background: #018BF9;border-radius: 13px;border: 1px solid #D8D8D8;color: #FFFFFF;}
+.H:hover {background: #00BBFF;color: #FFFFFF;}
+
+/*卷管理*/
+#guanli { margin-bottom:35px}
+#one { margin-top:38px; clear:both }
+#one input { margin-right:30px}
+#guanli input{ height:28px !important }
+#guanli tr td { border:0px; text-align:left}
+.guize4 tr td {  border:0px}
+.f-z-z { width:32%; margin-top:30px;}
+.f-z-z input { margin-left:3em}
+.guize5 tr td { border:0; text-align:left}
+.guize2 { width:50% !important}
+.guize2 tr td { border:0}
+.guize3 { width:50% !important}
+.guize1 tr td { border:0}
+.guize1 { width:50% !important}
+.guize4 { width:50% !important}
+.guize4 tr td select { width:50%}
+
+.zhijuan { width:70%}
+.zhijuan tr td { border:0; text-align:left}
+.zhijuan tr td input { width:40%}
+
+.xiaoshou { width:80%}
+.xiaoshou tr td { text-align:left; border:0}
+.xiaoshou tr td input { width:25%}
+.input {width:50% !important}
+.xiaoshou tr td select { width:60% !important}
+.tu { width:90% !important}
+
+.M{width:7em !important;padding: 5px 10px;background: #018BF9;border-radius: 13px;border: 1px solid #D8D8D8;color: #FFFFFF;}
+.M:hover {background: #00BBFF;color: #FFFFFF;}
+
+/*新增销售*/
+.xinZeng { width:50%}
+.xinZeng tr td { text-align:left; border:0; height:4em} 
+.xinZeng tr td textarea {margin: 0px;height: 124px;width: 52%;}
+.xinZeng-1 {margin-top: 30px; width:54%; text-align:center;}
+.xinZeng-1 input { margin-left:4%}
+
+
+/*延期管理*/
+.yanQi tr td input{ width:40%}
+.yanQi tr td select{ width:42%}
+.yanqi-one tr td input { width:40%}
+.yanqi-one tr td select { width:37%}
+.yanqi-one tr td { text-align:left; border:0}
+.yanQi tr td { border:0} 
+
+/*选择影院*/
+#tingDan {background:#F5F5F5; border-radius: 38px;width: 30%;padding-bottom: 5em;padding-top: 3em; padding-left: 10%;padding-right: 10%; margin-left:10%; margin-top:30px }
+#tingDan table tr td { border:0}
+
+
+
+
+
+
+
+
+
+
+/*footer*/
+.footer{ overflow:hidden; margin:20px 0; margin-right:33em; width:90%}
+.footer .footer-z{ height:22px;}
+.footer ul .footer-1{ margin-left:15px;}
+.footer ul{ float:left}
+.footer .footer-z{ height:22px;}
+.footer ul .footer-1{ margin-left:15px;}
+.footer ul{ float:right}
+.footer ul li{ float:left; margin-left:6px; line-height:22px; color:#535353;}
+.footer ul li a{ display:block; line-height:20px; padding:0 5px; border:1px solid #a0a0a0; color:#535353;}
+.footer ul li select{ height:22px; width:100%}
+.footer ul li span{ color:#535353;}
+.footer ul li input{ width:20px; height:18px;}
+.footer ul li a:hover{ background-color:#018BF9; color:#FFF;}
+.footer ul li{ float:left; margin-left:6px; line-height:22px; color:#535353;}
+.footer ul li a{ display:block; line-height:20px; padding:0 5px; border:1px solid #a0a0a0; color:#535353;}
+.footer ul li select{ height:22px; width:100%}
+.footer ul li span{ color:#535353;}
+.footer ul li input{ width:20px; height:18px;}
+.footer ul li a:hover{ background-color:#018BF9; color:#FFF;}

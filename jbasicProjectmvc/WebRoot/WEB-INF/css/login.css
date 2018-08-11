@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+/* rest */
+*{ margin:0; padding:0; font-size:12px; color:#333333;}
+body{margin:0;font-family:'宋体',sans-serif;font-size:12px;}
+h1,h2,h3,h4,p,dl,dt,dd,form,input,select {margin:0;padding:0;}
+h1,h2,h3,h4{font-weight:normal;font-size:12px;}
+th,td{padding:0;}
+ul,ol{margin:0;padding:0;list-style-type:none;}
+a img {border:none;}
+a {text-decoration:none;color:black;blr:expression(this.onFocus=this.blur());outline:none;}
+var,em {font-style:normal;}
+table{border-collapse:collapse;}
+input{cursor:pointer; outline:none;}
+select{ outline:none;}
+/*login*/
+
+body{background:url(../images/1px.jpg) repeat-x;height:100%;}
+.login{background:url(../images/login.png) no-repeat;width:816px;height:655px;margin:43px auto 0;position:relative;}
+.login input{color:#383838;font-size:21px;position:absolute;border:none;}
+.adm{width:270px;height:38px;line-height:38px;padding-left:10px;top:386px;left:287px;}
+.pw{width:270px;height:38px;line-height:38px;padding-left:10px;top:436px;left:287px;}
+.pin{width:84px;height:38px;line-height:38px;padding-left:10px;top:490px;left:287px;}
+.pinimg{width:134px;height:42px;position:absolute;top:487px;left:404px;}
+.submit{line-height:999px;overflow:hidden;height:42px;width:143px;background:none;top:552px;left:336px;}
+
+.login_none{height:323px;width:484px;margin:240px auto 0;background:url(../images/google.png) no-repeat;}

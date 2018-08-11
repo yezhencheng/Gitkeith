@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE mapper  
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+	<!-- 务必配置正确namespace 就是所映射的接口类-->
+<mapper namespace="com.dao.IUserDao">
+
+	<select id="showuser" resultType="com.entity.User"
+		parameterType="java.util.Map">
+		SELECT
+		t001_userinfo.id,
+		t001_userinfo.loginname,
+		password,
+		t001_userinfo.mobileno,
+		t001_userinfo.qq
+		FROM
+		t001_userinfo where id=#{userid}
+
+</select>
+
+
+	<select id="queryrolelist" resultType="com.entity.RoleInfo"
+		parameterType="java.util.Map">
+		SELECT
+		t003_rolemain.id,
+		t003_rolemain.roleid mainroleid,
+		t003_rolemain.rolename mainrolename
+		FROM
+		t003_rolemain 
+</select>
+
+
+
+	<select id="chooserolelist" resultType="com.entity.RoleInfo"
+		parameterType="java.util.Map">
+		select roleid mainroleid from t005_userrole where userid=#{userid}
+</select>
+
+
+	<insert id="updaterolemain" parameterType="java.util.Map">
+		update t003_rolemain
+		set
+		rolename=#{rolename},content=#{content}
+		where roleid=#{roleid}
+	</insert>
+
+	<delete id="deleterolemain" parameterType="java.util.Map">
+		DELETE from t003_rolemain where roleid=#{roleid}
+</delete>
+
+
+	<delete id="deleteroledetail" parameterType="java.util.Map">
+		DELETE from t004_rolepower where roleid=#{roleid}
+</delete>
+
+
+	<select id="powerbyid" resultType="com.entity.Power"
+		parameterType="java.util.Map">
+		SELECT A.powerid,B.powername from t004_rolepower A left JOIN
+		t002_powerinfo B on A.powerid=B.powerid where A.roleid=#{roleid}
+</select>
+
+
+	<select id="rolebyid" resultType="com.entity.RoleInfo"
+		parameterType="java.util.Map">
+		select A.roleid mainroleid,A.rolename mainrolename,A.content from
+		t003_rolemain A
+		where roleid=#{roleid}
+	</select>
+
+	<insert id="saverolemain" parameterType="java.util.Map">
+		insert into
+		t003_rolemain (roleid,rolename,content)
+		values
+		(#{roleid},#{rolename},#{content})
+	</insert>
+
+	<insert id="saveroledetail" parameterType="java.util.Map">
+		insert into
+		t004_rolepower (roleid,powerid)
+		values (#{roleid},#{powerid})
+	</insert>
+
+	<insert id="saveuserrole" parameterType="java.util.Map">
+		insert into t005_userrole (userid,roleid) values (#{userid},#{roleid})
+	</insert>
+
+
+	<delete id="deleterolebyuserid" parameterType="java.util.Map">
+		delete from t005_userrole where userid=#{userid}
+	</delete>
+
+
+	<select id="rolelistinfo" resultType="com.entity.RoleInfo">
+		select A.roleid
+		mainroleid,A.rolename mainrolename,group_concat(C.powername)
+		powernames from t003_rolemain A
+		left join t004_rolepower B on A.roleid=B.roleid
+		left join t002_powerinfo C on B.powerid=C.powerid
+		group by A.roleid
+	</select>
+
+
+	<select id="findpowerbyleave" resultType="com.entity.RoleInfo">
+		select powerid as mainroleid,powername as mainrolename from t002_powerinfo
+		where powerfather='0' and powername!='父模块'
+	</select>
+
+	<select id="findchildbyleave" resultType="com.entity.Power"
+		parameterType="java.util.Map">
+		select powerid ,powername from t002_powerinfo where powerfather=#{powerid}
+	</select>
+
+
+
+
+
+
+	<!-- 列表 -->
+	<select id="selectkey" resultType="com.entity.User">
+		select loginname from
+		t001_userinfo
+	</select>
+
+
+	<select id="ispowerfatherexist" resultType="com.entity.Power">
+		SELECT
+		id,powerid,powername,powerfather,urlaction FROM t002_powerinfo where
+		powerid=#{powerid}
+	</select>
+
+
+	<select id="powerModelById" resultType="com.entity.Power"
+		parameterType="java.util.Map">
+		SELECT
+		id,powerid,powername,powerfather,urlaction FROM
+		t002_powerinfo where
+		id=#{id}
+	</select>
+
+	<update id="updatepowerModel" parameterType="java.util.Map">
+		update
+		t002_powerinfo
+		set
+		powerid=#{powerid},powername=#{powername},powerfather=#{powerfather},
+		urlaction=#{urlaction}
+		where id=#{id}
+		</update>
+
+
+
+
+	<select id="findpowerlist" resultType="com.entity.Power">
+		SELECT
+		A.id,A.powerid,A.powername,A.powerfather,
+		case when A.powerfather='0'
+		THEN '根节点'
+		else '子节点' END AS mokuaijibie,B.powername as
+		powerfathername,
+		A.urlaction FROM t002_powerinfo A left join
+		t002_powerinfo B
+		ON A.powerfather=B.powerid
+		order by
+		A.powerid desc
+	</select>
+
+
+
+	<select id="queryfather" resultType="com.entity.Power">
+		SELECT
+		id,powerid,powername,powerfather,urlaction FROM t002_powerinfo where
+		powerfather=#{powerfather}
+	</select>
+
+
+	<insert id="savepower" parameterType="java.util.Map">
+		insert into t002_powerinfo
+		(powerid,powername,powerfather,urlaction)
+		values
+		(#{powerid},#{powername},#{powerfather},#{urlaction})
+		</insert>
+
+	<select id="isuserexist" parameterType="java.util.Map"
+		resultType="com.entity.User">
+		select loginname from t001_userinfo where
+		loginname=#{loginname}
+	</select>
+
+	<select id="findModel" parameterType="java.util.Map" resultType="com.entity.User">
+		select id, loginname,mobileno,qq from t001_userinfo where id=#{id}
+	</select>
+
+
+
+	<update id="updateModel" parameterType="java.util.Map">
+		update t001_userinfo set
+		loginname=#{loginname},
+		mobileno=#{mobileno},qq=#{qq} where id=#{id}
+	</update>
+
+	<delete id="deleteuser" parameterType="java.util.Map">
+		delete from t001_userinfo
+		where id=#{id}
+	</delete>
+
+	<delete id="deletepowerbyid" parameterType="java.util.Map">
+		delete from
+		t002_powerinfo where id=#{id}
+	</delete>
+
+
+	<select id="findlist" parameterType="java.util.Map" resultType="com.entity.User">
+		select id, loginname,mobileno,qq from t001_userinfo
+		where 1=1
+		<if test="loginname!=null and loginname!=''">
+			and loginname=#{loginname}
+		 </if>
+	</select>
+
+	<insert id="save" parameterType="java.util.Map">
+		insert into
+		t001_userinfo
+		(loginname,password,mobileno,qq) values
+		(#{loginname},#{password},#{mobileno},#{qq})
+	</insert>
+
+
+
+</mapper>

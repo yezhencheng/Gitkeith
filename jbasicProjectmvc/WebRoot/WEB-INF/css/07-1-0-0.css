@@ -1,0 +1,33 @@
+@charset "UTF-8";
+ 
+/*选择影院*/
+#tingDan {background:#F5F5F5; border-radius: 38px;width: 30%;padding-top: 3em; padding-left: 10%;padding-right: 10%; margin-left:10%; margin-top:30px }
+#tingDan table tr td { border:0}
+/*订单管理*/
+.dingDan tr td { text-align:left; border:0}
+.dingDan tr td input { width:50%}
+.dingDan tr td select { width:30%}
+.dingDan1 tr td { text-align:left; border:0}
+.dingDan1 tr td input {     width: 27.4%}
+.dingDan1 tr td select { width:50%}
+.dingDan2 { width:90% !important; margin-top:20px}
+
+
+
+
+
+
+
+
+
+/*footer*/
+.footer{ overflow:hidden; margin:20px 0; margin-right:33em; width:90%}
+.footer .footer-z{ height:22px;}
+.footer ul .footer-1{ margin-left:15px;}
+.footer ul{ float:right}
+.footer ul li{ float:left; margin-left:6px; line-height:22px; color:#535353;}
+.footer ul li a{ display:block; line-height:20px; padding:0 5px; border:1px solid #a0a0a0; color:#535353;}
+.footer ul li select{ height:22px; width:100%}
+.footer ul li span{ color:#535353;}
+.footer ul li input{ width:20px; height:18px;}
+.footer ul li a:hover{ background-color:#0785E8; color:#FFF;}
