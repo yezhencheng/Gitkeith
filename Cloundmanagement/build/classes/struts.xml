@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.maxSize" value="15728640" />
+	<package name="TEST" extends="struts-default">
+		<result-types>
+			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
+		</result-types>
+
+		<interceptors>
+			<!-- <interceptor name="loginInteceptor" class="dao.impl.LoginInterceptor"></interceptor> -->
+			<interceptor-stack name="loginStack">
+			<!-- <interceptor-ref name="loginInteceptor"></interceptor-ref>  -->
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<default-interceptor-ref name="loginStack"></default-interceptor-ref>
+
+		<action name="*_*" class="{1}Action" method="{2}">
+			<!--
+				type="dispatcher" 分发器，用于jsp页面跳转 type="redirect" 重定向到jsp、action、外部网址
+				type="redirect-action" 重定向到另外一个action type="chain" 用于action跳转
+				type="plaintext" 跳转显示源代码
+			-->
+			<result name="success">${Path}</result>
+			<result name="error">${Path}</result>
+			<result name="input">${Path}</result>
+			<result name="redirectAction" type="redirectAction">${Path}</result>
+			<result name="redirect" type="redirect">${Path}</result>
+			<result name="returnJSON" type="json"></result>
+			<result name="fileStream" type="stream">
+				<!-- 文件类型 -->
+				<param name="contentType"> application/vnd.ms-excel</param>
+				<!-- excelStream 与对应action中的输入流的名字要一致 -->
+				<param name="inputName">xmlStream</param>
+				<!-- 文件名 与action中fileName一致 -->
+				<param name="contentDisposition">attachment;filename=" ${fileName}.xls"</param>
+			</result>
+		</action>
+	</package>
+
+
+
+
+
+
+</struts>

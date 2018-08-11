@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+   "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<!-- 用户登录 -->
+<sqlMap>
+	<select id="sltlogin" parameterClass="java.util.Map" resultClass="Model.User">
+	select id,username,password from Usermsg 
+	where username=#username# and password=#password#
+	</select>
+	<insert id="saveuser" parameterClass="java.util.Map" >
+	insert into Usermsg( username,password)
+	values (#username#,#password#)
+	</insert>
+	<select id="sltuser" parameterClass="java.util.Map" resultClass="Model.User">
+	select username,password from Usermsg where 1=1
+	<isNotEmpty property="username">
+	and username=#username#
+	</isNotEmpty>
+	<isNotEmpty property="password">
+	and password=#password#
+	</isNotEmpty>
+	order by id desc
+	</select>
+</sqlMap>
