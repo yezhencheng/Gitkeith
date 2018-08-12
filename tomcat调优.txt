@@ -1,0 +1,13 @@
+1：目录/etc/profile 增加一句话(profile为一个文件)，
+export _JAVA_SR_SIGNUM=16
+2：增加保存后，执行source /etc/profile
+3：新增的TOMCAT下面conf/server.xml里面有调优，参考8760端口
+4:修改TOMCAT下面bin/catalina.sh文件的第一行加入
+JAVA_OPTS='-Xms512m -Xmx800m'（注意用VI命令，不要COPY下来）
+
+（步骤3,4，尽量COPY现有的TOMCAT，可以减少配置步骤）
+5:去tic09库里面的t0002表里面添加机器IP对应INTERFACE，影响到接口日志记录来源
+6:授权chmod 777 *.sh
+7:检查服务器时间
+8:检查启动项目连接数据库时间
+9:执行ulimit -a查看open file，不要为1024，应该为更大的值
