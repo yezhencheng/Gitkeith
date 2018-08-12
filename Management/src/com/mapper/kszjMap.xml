@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- 务必配置正确namespace 就是所映射的接口类-->
+<mapper namespace="com.dao.kszjDao">
+
+	<!-- 列表 -->
+	<select id="selectshxzx"  resultType="com.entity.kszj">
+		select id,zhuanjia,zhicheng,txt,img from zj_shxzx  
+	</select>
+	<select id="queryitem" resultType="com.entity.kszj" parameterType="java.util.Map">
+	select zhuanjia,zhicheng from zj_shxzx A
+	 where A.id=#{id}
+	</select>
+	
+</mapper>

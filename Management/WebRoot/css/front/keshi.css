@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+.ksjs{
+	height:500px;
+	width:765px;
+	margin: 16px auto;
+	position:relative;
+}
+
+.ksjs li{
+float:left;
+width:380px;
+height:35px;
+line-height:35px;
+background:url("../../img/icon.gif") 7px 17px  no-repeat;
+text-indent:22px;
+border-bottom:1px dashed #878787;
+}
+.ksjs li a{
+float:left;
+font-size:13px;
+color:#393939;
+}

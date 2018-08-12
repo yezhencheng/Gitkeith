@@ -1,0 +1,142 @@
+
+.container{
+    width:720px;
+    margin:0 auto;
+    
+}
+
+.header{
+    width:100%;
+    height:40px;
+    box-shadow: 10px 10px 10px rgba(111,111,111,.5);
+    position: relative;
+
+}
+.header .desc{
+    font-size: 18px;
+    line-height: 18px;
+    border-left: 1px solid #ccc;
+    position: absolute;
+    left: 200px;
+    top:20px;
+    padding-left: 20px;
+    font-weight:bold;
+}
+/*-----------------------------------×¢²á---------------------------*/
+.register{
+	width: 400px;
+	margin: 0 auto;
+	padding-top:40px;
+	position: relative;
+}
+
+.register-box{
+	width:100%;
+	height: 52px;
+	padding-bottom: 30px;
+}
+
+.register-box .box{
+	width:100%;
+	height:100%;
+	line-height: 52px;
+	padding-left: 10px;
+	border: 1px solid #ccc;
+	position: relative;
+}
+.register-box .box.error{
+	border:1px solid red;
+}
+.register-box .box input{
+	width:200px;
+	font-size:16px;
+	padding-left: 20px;
+}
+
+.register-box .box.right i{
+	width:20px;
+	height: 20px;
+	background: url(../../img/right.png) no-repeat center center;
+	position: absolute;
+	top:50%;
+	margin-top: -10px;
+	right: 10px;
+	
+}
+
+.register-box .tip {
+	width:100%;
+	line-height: 30px;
+	font-size: 12px;
+}
+.register-box .tip i{
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.register-box .tip span{
+	color: #CCCCCC;
+}
+
+.register-box .tip.hide{
+	display: none;
+}
+
+.register-box .tip.default i {
+	background: url(../../img/default.png) no-repeat center center;
+}
+.register-box .tip.default span{
+	color: #ccc;
+}
+
+.register-box .tip.error i {
+	background: url(../../img/error.png) no-repeat center center;
+}
+.register-box .tip.error span{
+	color: red;
+}
+
+.register-box .tip.ruo i {
+	background: url(../../img/ruo.png) no-repeat center center;
+}
+
+.register-box .tip.zhong i {
+	background: url(../../img/zhong.png) no-repeat center center;
+}
+
+.register-box .tip.qiang i {
+	background: url(../../img/qiang.png) no-repeat center center;
+}
+
+.register-box.xieyi{
+	width:100%;
+	height: 20px;
+	padding-bottom: 30px;
+/*	background-color: #ccc;*/
+}
+.register-box.xieyi .box{
+	line-height: normal;
+	padding: 0;
+	border: none;
+}
+.register-box.xieyi .box.error{
+	line-height: normal;
+	padding: 0;
+	border: 1px solid red;
+}
+.register-box.xieyi .box input{
+	width: auto;
+}
+
+.register button{
+	width: 100%;
+	height: 40px;
+	font:bold 18px/40px "Î¢ÈíÑÅºÚ";
+	color: white;
+	background-color: darkred;
+	outline-color: white;
+}
+.register button:hover{
+	background-color: red;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"  
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<!-- 务必配置正确namespace 就是所映射的接口类-->
+<mapper namespace="com.dao.messageDao">
+
+	<!-- 列表 -->
+	<select id="select"  resultType="com.entity.message">
+		select title from public order by id desc LIMIT 3
+	</select>
+	<insert id="savemessage"  parameterType="java.util.Map">
+	insert into message(username,message,date) values (#{username},#{message},#{date})
+	</insert>
+	
+</mapper>

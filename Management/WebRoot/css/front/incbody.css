@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+ 
+.Wrappers{
+	height:500px;
+	width:972px;
+	margin: 16px auto;
+	position:relative;
+}
+.Wrappers form{margin:0;padding:0;}
+.login{
+color:black;
+width:186px;
+height:150px;
+margin:1px;
+border: 1px solid #87CEFF;
+}
+.login div:FIRST-CHILD{
+color:white;
+width:186px;
+background-color:#6B6B6B;
+}
+.login input{
+width:80px;
+}
+
+.login button{
+margin:15px 0px 0px 30px;
+}
+.public{
+color:white;
+width:186px;
+height:150px;
+margin:1px;
+border: 1px solid #87CEFF;
+}
+.public div:FIRST-CHILD{
+width:186px;
+background-color:#6B6B6B;
+}
+.date
+{
+width:180px;
+height:150px;
+margin:1px;
+border: 1px solid #87CEFF;
+}
+.brief{
+width:780px;
+height:480px;
+color:white;
+position:absolute;
+top:0px;
+right: 0px;
+border: 1px solid #87CEFF;
+}
+.brief div:FIRST-CHILD{
+width:780px;
+background-color:#6B6B6B;
+}
+#btlogout{
+margin-left:110px;
+}

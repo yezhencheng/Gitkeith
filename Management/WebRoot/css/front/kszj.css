@@ -1,0 +1,51 @@
+@CHARSET "UTF-8";
+.Wrappers{
+	height:500px;
+	width:972px;
+	margin: 16px auto;
+	position:relative;
+}
+.rightzj{
+width:972px;
+float:left;
+margin-top:14px;
+}
+
+.zwsj{
+width:972px;
+float:left;
+margin-top:14px;
+text-align:center;
+}
+.photo1{
+width:93px;
+height:125px;
+margin:5px;
+overflow:hidden;
+}
+
+.zjtxt{
+width:972px;
+float:left;
+margin-left:15px;
+*margin-left:7px;
+text-align:left;
+font-size:13px;
+}
+
+.zjfont{
+color:#09885a;
+font-size:14px;
+font-weight:bold;
+}
+
+.zjfont1{
+color:#09885a;
+font-size:12px;
+
+}
+
+.zjtxt li{
+width:965px;
+line-height:24px;
+}
